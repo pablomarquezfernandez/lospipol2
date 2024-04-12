@@ -1,1 +1,6 @@
-<p>datospipol works!</p>
+<h1>Modelos llamados con servicios</h1>
+<ul>
+    <li *ngFor = "let pipol of datosModelosService">
+        {{ pipol.nombres }} {{ pipol.apellidos }}
+    </li>
+</ul>

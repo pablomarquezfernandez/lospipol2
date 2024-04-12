@@ -16,8 +16,8 @@ import { DatosclaseComponent } from "./components/datosclase/datosclase.componen
 export class AppComponent {
   title = 'lospipol';
   
-  datosModelosService: Pipol[] = [];
-  datosModelosServiceExterno: Pipol[] = [];
+  
+  
   datos = [
     {nombres: "Pablo", apellidos:"Márquez"},
     {nombres: "María", apellidos:"Pacheco"},
@@ -39,19 +39,6 @@ export class AppComponent {
   ){
   }
   ngOnInit(): void {
-    this.cargarPipolService();
   }
-  cargarPipolService(){
-    // Externo
-    this.pipolService.getPipolsExterno().then((post) => {
-      this.datosModelosServiceExterno = post;
-    }).catch((error) => {
-      console.error(error);
-    });
-
-    // Interno
-    this.pipolService.getPipolsInterno().subscribe( response =>{
-      this.datosModelosService  = response;
-    } );
-  }
+  
 }

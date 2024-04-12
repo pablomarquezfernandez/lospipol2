@@ -1,10 +1,9 @@
 export class Pipol {
-  
     constructor(
-      public id: number,
-      public nombres: string,
-      public apellidos: string,
-      public correo: string,
+      public id?: number | null,
+      public nombres?: string | null,
+      public apellidos?: string | null,
+      public correo?: string | null,
     ){}
   
   }

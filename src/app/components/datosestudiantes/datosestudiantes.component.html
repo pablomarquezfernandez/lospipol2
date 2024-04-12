@@ -1,1 +1,7 @@
-<p>datosestudiantes works!</p>
+<h1>Modelos llamados con servicios externo</h1>
+<ul>
+    <li *ngFor = "let pipol of datosModelosServiceExterno">
+        {{ pipol.nombres }} {{ pipol.apellidos }} --> <a href = "" (click)="cambiarPipol($event, pipol)">Ir</a>
+    </li>
+</ul>
+<app-estudiante [pipol22] = "pipolo"></app-estudiante>

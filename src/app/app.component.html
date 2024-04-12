@@ -1,7 +1,8 @@
 {{ title }}
-
 <br/>-----<br/>
-<h1>Datos</h1>
+<a href = '/'>Listado 1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = '/pipol/data'>Listado 2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = 'insertar'>Insertar</a>
+<br/>-----<br/>
+<!-- <h1>Datos</h1>
 <ul>
     <li *ngFor = "let usuario of datos">
         {{ usuario.nombres }} {{ usuario.apellidos }}
@@ -14,22 +15,7 @@
     <li *ngFor = "let pipol of datosModelos">
         {{ pipol.nombres }} {{ pipol.apellidos }}
     </li>
-</ul>
+</ul> -->
 
-<h1>Modelos llamados con servicios</h1>
-<ul>
-    <li *ngFor = "let pipol of datosModelosService">
-        {{ pipol.nombres }} {{ pipol.apellidos }}
-    </li>
-</ul>
-<h1>Modelos llamados con servicios externo</h1>
-<ul>
-    <li *ngFor = "let pipol of datosModelosServiceExterno">
-        {{ pipol.nombres }} {{ pipol.apellidos }}
-    </li>
-</ul>
 
 <router-outlet></router-outlet>
-<app-datosestudiantes></app-datosestudiantes>
-<app-datosclase></app-datosclase>
-
