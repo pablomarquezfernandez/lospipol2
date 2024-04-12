@@ -27,6 +27,7 @@ export class PipolService {
 
 
   insertarPipols( pipol:Pipol ): Promise< Pipol > {
-    return axios.post<Pipol>('http://localhost:8080/api/javeriana/estudiante/estudiante', pipol).then(response => response.data);
+    return axios.post<Pipol>('http://localhost:8080/api/javeriana/estudiante/estudiante', pipol).
+                            then(response => response.data);
   }
 }
