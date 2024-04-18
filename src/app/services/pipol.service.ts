@@ -9,6 +9,8 @@ import axios from 'axios';
 })
 export class PipolService {
 
+
+
   constructor() { }
 
 
@@ -27,7 +29,10 @@ export class PipolService {
 
 
   insertarPipols( pipol:Pipol ): Promise< Pipol > {
-    return axios.post<Pipol>('http://localhost:8080/api/javeriana/estudiante/estudiante', pipol).
-                            then(response => response.data);
+    return axios.post<Pipol>('http://localhost:8080/api/javeriana/estudiante/estudiante', pipol).then(response => response.data);
+  }
+
+  insertarPipolsConError( pipol:Pipol ): Promise< Pipol[] > {
+    return axios.get< Pipol[] >('http://localhost:8080/api/javeriana/estudiante/excepcion').then(response => response.data);
   }
 }

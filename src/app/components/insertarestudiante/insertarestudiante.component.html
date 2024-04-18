@@ -6,5 +6,9 @@
     Correo<br/>
     <input type = 'text' name = 'correo'  [(ngModel)] = "pipol.correo" /><br/>
 
-    <input type = 'submit'/>
+    <input type = 'submit'/><br/>
+   
 </form>
+
+<button (click)="insertarPipolConError()">Con error</button>
+{{ mensaje }}

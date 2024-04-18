@@ -5,13 +5,14 @@ import { CommonModule } from '@angular/common';
 import { PipolService } from './services/pipol.service';
 import { DatosestudiantesComponent } from "./components/datosestudiantes/datosestudiantes.component";
 import { DatosclaseComponent } from "./components/datosclase/datosclase.component";
+import { InsertarestudianteComponent } from "./components/insertarestudiante/insertarestudiante.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, CommonModule, DatosestudiantesComponent, DatosclaseComponent]
+    imports: [RouterOutlet, CommonModule, DatosestudiantesComponent, DatosclaseComponent, InsertarestudianteComponent]
 })
 export class AppComponent {
   title = 'lospipol';
@@ -39,6 +40,10 @@ export class AppComponent {
   ){
   }
   ngOnInit(): void {
+  }
+
+  sacarAlerta(){
+    alert("Proceso exitoso");
   }
   
 }

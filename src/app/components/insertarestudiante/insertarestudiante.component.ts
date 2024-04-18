@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Pipol } from '../../models/Pipol';
 
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,9 @@ import { PipolService } from '../../services/pipol.service';
 })
 export class InsertarestudianteComponent {
 
+  @Output() sacarAlert = new EventEmitter(); 
   pipol: Pipol;
+  mensaje ="";
 
   constructor(
     private pipolService: PipolService,
@@ -23,9 +25,25 @@ export class InsertarestudianteComponent {
 
   insertarPipol(  ){
     this.pipolService.insertarPipols( this.pipol ).then(response => {
+      this.sacarAlert.emit(null);
       window.location.href = "/";
     }, error => {
       console.error('Error:', error);
     });
   }
+
+
+  insertarPipolConError(  ){
+    this.pipolService.insertarPipolsConError( this.pipol ).then(response => {
+      
+    }, error => {
+      this.mensaje = "Error: " + error.response.data.message;
+      console.error('Error:', error);
+    });
+  }
+
+
+  
+
+
 }
