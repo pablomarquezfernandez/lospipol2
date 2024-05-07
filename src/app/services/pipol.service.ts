@@ -3,6 +3,7 @@ import { Pipol } from '../models/Pipol';
 import { Observable, of } from 'rxjs';
 
 import axios from 'axios';
+import { Token } from '../models/Token';
 
 @Injectable({
   providedIn: 'root'
@@ -28,8 +29,25 @@ export class PipolService {
   }
 
 
-  insertarPipols( pipol:Pipol ): Promise< Pipol > {
+  insertarPipols2( pipol:Pipol ): Promise< Pipol > {
     return axios.post<Pipol>('http://localhost:8080/api/javeriana/estudiante/estudiante', pipol).then(response => response.data);
+  }
+
+
+  insertarPipols( pipol:Pipol ): Promise< Token > {
+    return axios.post<Token>('http://localhost:8080/jwt/security/autenticar/autenticar', pipol).then(response => response.data);
+  }
+  getPipol( token:Token ): Promise< Pipol > {
+    var stoken = token.type + "" + token.token; 
+    console.log("----------------------------------------");
+    console.log("----------------------------------------");
+    console.log("----------------------------------------");
+    console.log(token);
+    console.log("----------------------------------------");
+    console.log("----------------------------------------");
+    console.log("----------------------------------------");
+    var headers = {"Authorization":stoken, 'Content-Type': 'application/json'}
+    return axios.post<Pipol>('http://localhost:8080/jwt/security/usuario', {}, {headers}).then(response => response.data);
   }
 
   insertarPipolsConError( pipol:Pipol ): Promise< Pipol[] > {
